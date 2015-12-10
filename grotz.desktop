@@ -1,0 +1,12 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=grotz
+Comment=Z-machine interpreter
+Exec=grotz
+MimeType=application/x-zmachine
+Icon=grotz
+Terminal=false
+Type=Application
+Categories=AudioVideo;Game;
+X-Desktop-File-Install-Version=0.16
