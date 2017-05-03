@@ -20,8 +20,8 @@ static void settings_init (Settings *self)
   self->user_screen_width = 80;
   self->user_tandy_bit = 0;
   self->user_interpreter_number = 0;
-  self->font_name_main = strdup ("Monospace");
-  self->font_name_fixed = strdup ("Serif");
+  self->font_name_main = strdup ("Serif");
+  self->font_name_fixed = strdup ("Monospace");
   self->font_size = 10;
   self->filename = NULL;
   self->speed = 0; // No timed input
