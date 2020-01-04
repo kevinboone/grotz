@@ -386,18 +386,18 @@ grotz is released under the GNU Public Licence, version 2.0.
 
 ## Revisions
 
-###0.2c
+### 0.2c
 
 * Minor bug fixes
 * Added option to ignore game colours
 
-###0.2b
+### 0.2b
 
 * Fixed the 'more...' prompt so that it does not push text to the right
 * Made the caret visible in single-key keyboard read operations
 * Added error reporting level selection the Settings dialog
 * If a game clears the whole screen to a particlar colour, that colour is now also used for the unpainted areas of the main window (e.g., margins).  This makes games like Beyond Zork that draw their own dark backgrounds look nicer, at the expense of a bit more screen flicker at times.  
 
-###0.2a
+### 0.2a
 
 First public release
