@@ -7,10 +7,10 @@ _Version 0.2c, April 2012_
 *been done, and I'm not convinced that the build machinery for Windows*
 *still works. Despite the optimism I express in the main documentation,*
 *grotz is actually a little fiddly to build, for any platform.*
-* There are binaries in various*
+*There are binaries in various*
 *repositories, for Linux and Windows, but I have no idea how up to date*
 *they are. Although grotz is notionally still maintained (as of 2020),*
-*I have to confess that there has been little recent activity.**
+*I have to confess that there has been little recent activity.*
 
 grotz is a GTK port of Frotz -- the classic Z-code game engine.
 grotz, like Frotz, is intended for playing 'interactive fiction'
