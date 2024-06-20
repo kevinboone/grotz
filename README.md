@@ -9,10 +9,14 @@ _Version 0.2c, April 2012_
 *grotz is actually a little fiddly to build, for any platform.*
 *There are binaries in various*
 *repositories, for Linux and Windows, but I have no idea how up to date*
-*they are. Although grotz is notionally still maintained (as of 2020),*
+*they are. Although grotz is notionally still maintained (as of 2024),*
 *I have to confess that there has been little recent activity.*
 
-grotz is a GTK port of Frotz -- the classic Z-code game engine.
+*Please note also that Frotz uses GTK2 (aka GTK+ 2.0). Both building*
+*and running it probably require dependencies that won't be installed*
+*by default on a modern Linux system.*
+
+grotz is a GTK2 port of Frotz -- the classic Z-code game engine.
 grotz, like Frotz, is intended for playing 'interactive fiction'
 games compiled for the Inform Z-machine platform. Although the
 Z-machine is, in a sense, an archaic and defunct platform, many
@@ -59,7 +63,7 @@ even more so ;)
 One of the goals of grotz is to build on Linux and Windows (using MinGW
  and Msys)
 using unsophisticated build tools. In principle, all that is required
-are GTK development libraries and headers, and a C compiler. 
+are GTK2 development libraries and headers, and a C compiler. 
 
 Building the program ought to be as simple as unpacking the source
 code and typing `make bundle`. This should compile
@@ -67,11 +71,11 @@ everything, and copy the compiled binary and supporting libraries
 to the platfom-specific subdirectory of the 'deploy'
 directory. In the Linux case, there will be no additional libraries,
 because we expect to find them at the system level. On Windows, 
-binaries of the GTK libraries are copied alonside the program
+binaries of the GTK2 libraries are copied alonside the program
 executable, making a big bundle ready for the Windows installer.
 
 On Windows, the source code comes with the development version of
-GTK bundled, as most Windows developers do not have this. All this
+GTK2 bundled, as most Windows developers do not have this. All this
 stuff is in the 'winstuff' directory.
 
 The assumed use of Msys allows us to treat Windows and Linux builds
@@ -381,7 +385,7 @@ Frotz was extended with full Unicode support by David Kinder, who wrote
 WindowsFrotz -- the source for which I referred to extensively in 
 developing grotz.
 
-grotz is released under the GNU Public Licence, version 2.0.
+grotz is released under the GNU Public Licence, version 3.0.
 
 
 ## Revisions
