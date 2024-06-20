@@ -14,7 +14,6 @@ typedef unsigned short UTF16;
 typedef unsigned char UTF8;
 static const int halfShift  = 10; 
 static const UTF32 halfBase = 0x0010000UL;
-static const UTF32 halfMask = 0x3FFUL;
 #define UNI_REPLACEMENT_CHAR (UTF32)0x0000FFFD
 #define UNI_SUR_HIGH_START  (UTF32)0xD800
 #define UNI_SUR_HIGH_END    (UTF32)0xDBFF

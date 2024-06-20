@@ -12,10 +12,11 @@
 # make bundle
 # (output is writtern to deploy/[platform]/grotz)
 
+DESTDIR ?= /
 UNAME := $(shell uname -o)
-BINDIR=/usr/bin
-DESKTOPDIR=/usr/share/applications
-PIXMAPDIR=/usr/share/pixmaps
+BINDIR=$(DESTDIR)/usr/bin
+DESKTOPDIR=$(DESTDIR)/usr/share/applications
+PIXMAPDIR=$(DESTDIR)/usr/share/pixmaps
 
 .SUFFIXES: .o .c
 
@@ -62,7 +63,7 @@ endif
 
 include dependencies.mak
 
-CFLAGS=-Wall $(DEBUG_CFLAGS) $(PLATFORM_CFLAGS) -DVERSION=\"$(VERSION)\"
+CFLAGS=-Wall -Wno-unused-result -Wno-deprecated-declarations $(DEBUG_CFLAGS) $(PLATFORM_CFLAGS) -DVERSION=\"$(VERSION)\"
 INCLUDES=$(PLATFORM_INCLUDES) 
 LIBS=$(PLATFORM_LIBS)
 
@@ -91,9 +92,12 @@ wininstall:
 	echo Please run the program from the 'deploy\win32' directory
 
 lininstall: linbundle
-	cp -p deploy/linux/$(PROJNAME)/* $(BINDIR)
-	cp grotz.desktop $(DESKTOPDIR)
-	cp icons/grotz.png $(PIXMAPDIR)
+	mkdir -p $(BINDIR)
+	mkdir -p $(PIXMAPDIR)
+	mkdir -p $(DESKTOPDIR)
+	install -D -m 755 deploy/linux/$(PROJNAME)/* $(BINDIR)
+	install -D -m 755 grotz.desktop $(DESKTOPDIR)
+	install -D -m 644 icons/grotz.png $(PIXMAPDIR)
 
 ifeq ($(PLATFORM),win32)
 bundle: all winbundle
@@ -104,7 +108,7 @@ endif
 ifeq ($(PLATFORM),win32)
 install: winbundle wininstall 
 else
-install: all lininstall
+install: lininstall
 endif
 
 clean:
